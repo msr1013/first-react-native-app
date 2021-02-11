@@ -1,37 +1,38 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-const App = () => {
-  return <View style={styles.screen}>
-    <Text style={styles.title}>Welcome to React Native </Text>
-    <View style={styles.card}>
-      <Text style={styles.title}>ABC </Text>
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.view1}></View>
+      <View style={styles.view2}></View>
+      <View style={styles.view3}></View>
     </View>
-    <Text>Hello World!!
-      <Text>
-        From another world
-      </Text>
-    </Text>
-  </View>
-
+  )
 }
 
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     flex: 1,
-    backgroundColor: 'white',
-    marginTop: 30
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  title: {
-    padding: 20,
-    fontSize: 20,
-    fontWeight: 'bold'
+  view1: {
+    width: 100,
+    height: 100,
+    backgroundColor: '#f00'
   },
-  card: {
-    width: '100%',
-    height: '200',
-    backgroundColor: 'grey'
-  }
+  view2: {
+    width: 100,
+    height: 100,
+    backgroundColor: '#ff0'
+  },
+  view3: {
+    width: 100,
+    height: 100,
+    backgroundColor: '#00f'
+  },
 })
 
 export default App
