@@ -1,16 +1,38 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.view1}>
-        <Text style={styles.text}>Conversation</Text>
+
+        <Ionicons name="menu-sharp" size={32} color="white" />
+        <MaterialIcons name="search" size={32} color="white" />
+
+        <Text style={styles.text}>$931280</Text>
       </View>
-      <View style={styles.view2}></View>
-      <View style={styles.view3}></View>
+
+      <View style={styles.view3}>
+        <View style={styles.footerContainer}>
+          <View>
+            <Text style={styles.text}>Transaction</Text>
+          </View>
+          <View>
+            <Text style={styles.text}>See All</Text>
+          </View>
+        </View>
+
+        <View>
+          <Text style={styles.text}>Car Purchase</Text>
+
+          <Text style={styles.text}>House Purchase</Text>
+        </View>
+
+
+      </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -19,27 +41,26 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flexDirection: 'column',
 
-
   },
   view1: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#f00'
+    flex: 5,
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    backgroundColor: '#2F26D9'
   },
-  view2: {
-    flex: 8,
-    backgroundColor: '#ff0'
-  },
+
   view3: {
-    flex: 1,
-    backgroundColor: '#00f'
+    flex: 4,
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'space-between'
   },
   text: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
-    color: 'fff'
+    color: '#1A2C4F'
+  },
+  footerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   }
-})
-
-export default App
+});
