@@ -1,8 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import Calc from './widgets/calc.js'
+import HomePage from './widgets/HomePage'
+
 
 export default function App() {
-  return <Calc />
+  return (
+    <HomePage />
+  )
 }
