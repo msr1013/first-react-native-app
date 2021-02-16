@@ -30,6 +30,28 @@ const CustomButton = props => {
     </View>
 }
 
+const TransactionCard = props => {
+    return (
+        <View style={styles.transaction}>
+            <View style={styles.tranLeft}>
+                <View style={{ ...styles.iconContainer, backgroundColor: props.color }}>
+                    <AntDesign name={props.icon} size={30} color='#fff' />
+
+                </View>
+                <View>
+                    <Text style={styles.transactionTitle}>{props.title}</Text>
+                    <Text style={styles.transactionSubTitle}>{props.subtitle} </Text>
+                </View>
+            </View>
+            <View style={styles.tranRight}>
+                <Text >{props.amount}</Text>
+            </View>
+
+        </View>
+    )
+}
+
+
 const HomePage = props => {
     return (
         <View style={styles.screen}>
@@ -46,7 +68,13 @@ const HomePage = props => {
                 <View style={{ ...styles.container, marginTop: 15 }}>
                     <View style={styles.titleBar}>
                         <Text style={styles.amount}>Transactions</Text>
-                        <CustomButton title='View All' color={Colors.blue} bgc='#abc'> </CustomButton>
+                        <CustomButton title='View All' color={Colors.blue} bgc='#abc' />
+
+                    </View>
+                    <View style={styles.transactions}>
+                        <TransactionCard icon='car' title='Car Purchase' subtitle='Auto -Loan' amount='$250' color='#469' />
+                        <TransactionCard icon='home' title='House Purchase' subtitle='Airbnb Home' amount='$2250' color='#9df' />
+                        <TransactionCard icon='gift' title='Transport' subtitle='Uber Pathao' amount='$250' color='#1c9' />
                     </View>
                 </View>
             </View>
@@ -93,7 +121,34 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#da0',
         fontSize: 20
+    },
+    transLeft: {
+        flexDirection: 'column',
+        alignItems: 'center'
+    },
+    iconContainer: {
+        width: 50,
+        height: 50,
+        borderRadius: 30,
+        backgroundColor: 'red',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginRight: 20
+    },
+    transactionTitle: {
+        fontWeight: 'bold',
+        fontSize: 13
+    },
+    tranRight: {
+
+    },
+    transaction: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginVertical: 10,
     }
+
 })
 
 export default HomePage
