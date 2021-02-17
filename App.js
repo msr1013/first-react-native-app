@@ -1,11 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import HomePage from './widgets/HomePage'
+import { StatusBar } from 'expo-status-bar'
+import FoodHome from './widgets/foodhome.js'
 
 
 export default function App() {
   return (
-    <HomePage />
+    <View style={styles.container}>
+      <StatusBar style='auto' />
+      <FoodHome />
+    </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 25
+  }
+})
